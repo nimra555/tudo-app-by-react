@@ -5,6 +5,10 @@ import Paper from '@material-ui/core/Paper';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width:"100vw",
+        height:"100vh",
     },
 
     center: {
@@ -12,8 +16,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        margin: '0 auto',
-        marginTop: 50,
         padding: 50,
         backgroundColor: 'rgba(47,156,132,1)',
     },
@@ -28,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
         border: 'none',
         borderBottom: '3px solid rebeccapurple',
         borderRadius: '16px  0px',
+        outline:'none',
     },
     add:{
     background: 'transparent',
@@ -35,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
     border: '3px solid rebeccapurple',
     borderRadius: '5px 20px',
     fontWeight: 600,
+    cursor:'pointer',
     },
     list:{
         listStyle:'none',
@@ -43,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor:'rgba(47,156,132,1)',
         border: '1px solid rebeccapurple',
         margin: 5,
+        cursor:'pointer',
     }
 }
 ));
@@ -58,7 +63,7 @@ function Tudo() {
         <div className={classes.root}>
             <Paper elevation={3} className={classes.center} >
                 <h1 className={classes.head}>Tudo App</h1>
-                <input type="text" class={classes.input} placeholder="Enter Tudo" value={tudoAdd} onChange={(e) => { setAdd(e.target.value) }} />
+                <input type="text" className={classes.input} placeholder="Enter Tudo" value={tudoAdd} onChange={(e) => { setAdd(e.target.value) }} />
 
                 <ul>
                     {tudoItem.map((tudoList, ind) => {
